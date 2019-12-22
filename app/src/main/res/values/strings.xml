@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CoffeeTracker</string>
+    <string name="send_data">Send Data</string>
+    <string name="read_data">Read Data</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="output">Output Message</string>
+    <string name="last_name">Last</string>
+    <string name="first_name">First</string>
+    <string name="year_born">Born</string>
+    <string name="send_user">Send User</string>
+</resources>

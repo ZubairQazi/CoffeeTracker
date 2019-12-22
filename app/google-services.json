@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "440952782006",
+    "firebase_url": "https://coffeetracker-1c2db.firebaseio.com",
+    "project_id": "coffeetracker-1c2db",
+    "storage_bucket": "coffeetracker-1c2db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440952782006:android:106d88ff94037f046a3a17",
+        "android_client_info": {
+          "package_name": "com.zubairqazi.coffeetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440952782006-ab7d00qmq1fu0bd69onbkp604t3ourlf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHp1jtxZ3fmKP3RysQsTpgtsGFCuEOIjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440952782006-ab7d00qmq1fu0bd69onbkp604t3ourlf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
