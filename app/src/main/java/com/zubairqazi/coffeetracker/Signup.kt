@@ -21,36 +21,6 @@ class Signup : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        val firstName: String = findViewById<TextView>(R.id.firstName).text.toString()
-        val lastName: String = findViewById<TextView>(R.id.lastName).text.toString()
-        val yearBorn: String = findViewById<TextView>(R.id.yearBorn).text.toString()
 
-        val user = hashMapOf(
-            "first" to firstName,
-            "last" to lastName,
-            "born" to yearBorn
-        )
-
-        val sendUser = findViewById<Button>(R.id.sendUser)
-        sendUser.setOnClickListener {
-            db.collection("users")
-                .add(user)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                }
-                .addOnFailureListener { e ->
-                    Log.w(TAG, "Error adding document", e)
-                }
-
-            val intent = Intent(this, MainActivity::class.java).apply {
-                putExtra(EXTRA_MESSAGE, "Returning to home")
-            }
-            startActivity(intent)
-        }
-
-    }
-
-    fun onClickBtn(view: View) {
-        Toast.makeText(this, "This is the second screen!!", Toast.LENGTH_LONG).show()
     }
 }
