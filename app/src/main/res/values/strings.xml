@@ -3,13 +3,9 @@
     <string name="send_data">Send Data</string>
     <string name="read_data">Read Data</string>
     <string name="sign_up">Sign Up</string>
-    <string name="output">Output Message</string>
-    <string name="last_name">Last</string>
-    <string name="first_name">First</string>
-    <string name="year_born">Born</string>
     <string name="register_user">Register</string>
-    <string name="login_user">Login</string>
     <string name="email">Enter Email</string>
     <string name="password">Enter Password</string>
     <string name="signin_prompt">Already Registered? Sign in here.</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>

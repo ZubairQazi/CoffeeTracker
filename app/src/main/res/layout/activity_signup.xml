@@ -6,7 +6,7 @@
     android:layout_gravity="center_vertical"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".Signup">
+    tools:context=".SignupActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -46,14 +46,6 @@
         android:layout_marginTop="10dp">
 
         <Button
-            android:id="@+id/buttonLogin"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_margin="15sp"
-            android:layout_weight="1"
-            android:text="@string/login_user" />
-
-        <Button
             android:id="@+id/buttonRegister"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
@@ -63,9 +55,10 @@
 
     </LinearLayout>
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/signin_prompt"-->
-<!--        android:textAlignment="center" />-->
+    <TextView
+        android:id="@+id/textViewSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signin_prompt"
+        android:textAlignment="center" />
 </LinearLayout>

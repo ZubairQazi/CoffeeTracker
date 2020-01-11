@@ -1,18 +1,16 @@
 package com.zubairqazi.coffeetracker
 
-import android.app.ProgressDialog
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.*
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class Signup : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
 
     val TAG = "SignupActivity"
     val EXTRA_MESSAGE = "com.zubairqazi.coffeetracker.MESSAGE"
@@ -21,7 +19,8 @@ class Signup : AppCompatActivity() {
     private lateinit var editUserPwd: EditText
 
     private lateinit var btnRegister: Button
-    private lateinit var btnLogin: Button
+
+    private lateinit var signUpText: TextView
 
     val db = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
@@ -34,14 +33,15 @@ class Signup : AppCompatActivity() {
         editUserPwd = findViewById(R.id.pwdField)
 
         btnRegister = findViewById(R.id.buttonRegister)
-        btnLogin = findViewById(R.id.buttonLogin)
+
+        signUpText = findViewById(R.id.textViewSignIn)
 
         btnRegister.setOnClickListener {
             registerUser()
         }
 
-        btnLogin.setOnClickListener {
-            TODO("Login not yet implemented.")
+        signUpText.setOnClickListener {
+            // Open login page
         }
 
         auth = FirebaseAuth.getInstance()
@@ -67,6 +67,8 @@ class Signup : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
+                    Toast.makeText(baseContext, "Registered successfully!",
+                        Toast.LENGTH_SHORT).show()
 //                    val user = auth.currentUser
 
                 } else {
