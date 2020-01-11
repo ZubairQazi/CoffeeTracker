@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val users = db.collection("Users")
+//        val users = db.collection("Users")
 
         val user = hashMapOf(
             "id" to "00000001",

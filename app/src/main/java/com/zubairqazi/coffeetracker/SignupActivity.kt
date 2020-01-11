@@ -1,5 +1,6 @@
 package com.zubairqazi.coffeetracker
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -13,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class SignupActivity : AppCompatActivity() {
 
     val TAG = "SignupActivity"
-    val EXTRA_MESSAGE = "com.zubairqazi.coffeetracker.MESSAGE"
+//    val EXTRA_MESSAGE = "com.zubairqazi.coffeetracker.MESSAGE"
 
     private lateinit var editUserEmail: EditText
     private lateinit var editUserPwd: EditText
@@ -24,6 +25,8 @@ class SignupActivity : AppCompatActivity() {
 
     val db = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
+
+    private lateinit var switchIntent: Intent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,8 @@ class SignupActivity : AppCompatActivity() {
 
         signUpText.setOnClickListener {
             // Open login page
+            switchIntent = Intent(this, LoginActivity::class.java)
+            startActivity(switchIntent)
         }
 
         auth = FirebaseAuth.getInstance()
@@ -53,12 +58,10 @@ class SignupActivity : AppCompatActivity() {
 
         if (userEmail.isNullOrBlank()) {
             Toast.makeText(this, "Please enter an email.", Toast.LENGTH_SHORT).show()
-            // Add a toast message
             return
         }
         if (userPwd.isNullOrBlank()) {
             Toast.makeText(this, "Please enter a password.", Toast.LENGTH_SHORT).show()
-            // Add a toast message
             return
         }
 
@@ -70,11 +73,13 @@ class SignupActivity : AppCompatActivity() {
                     Toast.makeText(baseContext, "Registered successfully!",
                         Toast.LENGTH_SHORT).show()
 //                    val user = auth.currentUser
+                    switchIntent = Intent(this, MainActivity::class.java)
+                    startActivity(switchIntent)
 
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.makeText(baseContext, "Authentication Failed.",
                         Toast.LENGTH_SHORT).show()
                 }
 
